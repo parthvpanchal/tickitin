@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>organizer dashboard- tick_it_in</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>My Events (Organizer)</h1>
+        </nav>
+    </header>
+
+    <a href="/create-event" class="btn">+ Create New Event</a>
+
+    <% if (events.length === 0) { %>
+        <p> You haven't created  any events yet </p>
+    <% } else { %>
+        <div class="event-list">
+            <% events.forEach(event => { %>
+                <div class="event-card">
+                    <h3><%= event.title %></h3>
+                    <p><%= event.description %></p>
+                    <p><%= event.location %></p>
+                    <p><%= new Date(event.date).toLocaleString() %></p>
+                    <p>Seats: <%=event.seats%></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+    <a href="/events">Back to All Events</a>
+</body>
+</html>

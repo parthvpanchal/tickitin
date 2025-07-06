@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Tick_It_In - Book Local Events</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+    <a href="/" class="logo-link">
+        <img src="/images/logoo.png" alt="Tick_it_in logo" class="logo">
+    </a>
+    <nav>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/events">Browse Events</a>
+        <a href="/my-bookings">My Bookings</a>
+        <% if (user && user.role === 'organizer') { %>
+            <a href="/organizer">Organizer Dashboard</a>
+        <% } %>
+    </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome students of Presidency University, Discover and Book exciting events</h2>
+        <p>From college fests to local meetups, all in one place.</p>
+        <a href="/events" class="btn">Explore Events</a>
+    </section>
+    <section class="featured-events">
+        <h2>Featured Events</h2>
+        <div class="event-highlights">
+            <div class="event-card-0">
+                <img src="/images/invincia.png">
+                <h3>Invincia 2024</h3>
+                <p>This is the best event of the year conducted by the DSA of Presidency university inviting popular celebraty guests and amazing singers for the peformances. Its the biggest fest in Bangalore with a ton of events including dancing, singing, rap battles, fassion shows and what not. A fest of 2-3 days giving students of Presidency University an oportunity to lead, participate, and volunteer, and give their creative ideas and students from other colleges are invited to compete among each other showcasing their tallents.</p>
+            </div>
+            <div class="event-card-0">
+                <img src="/images/hackthon.webp">
+                <h3>Hackthon 3</h3>
+                <p>The smartest students of various fields interested in building solutions with their ideas. Students from any field can apply but mostly the questions are based upon programming and designing. Its an excellent oportunity to showcase their creative ideas and problem solving skills and team strength</p>
+            </div>
+            <div class="event-card-0">
+                <img src="/images/photography.jpg">
+                <h3>Photography</h3>
+                <p>Farhan of Presidency University who wants to showcase your passion towards photography, have a great oportunity here. No issues if you say, "Abba nahi maanenge" as here you will get all the facilities and oportunities if your work is exceptional</p>
+            </div>
+            <div class="event-card-0">
+                <img src="/images/football.jpg">
+                <h3>Football 5 aside</h3>
+                <p>Sunil Chhetris of Presidency University, here you have a football event (5 aside with 2 substitues) where you can give your best and show your stamina and skills on the turf for 30 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-gallery">
+        <h2>Photo Gallery and Testimonials</h2>
+        <div class="picture">
+            <img src="/images/volleyball-picture.jpg">
+            <div class="pic">
+            <p>"The energy during our volleyball tournament was unmatched!"</p><br>
+            <p class="p2">-Parth V Panchal, CSE Dept.</p>
+            </div>
+        </div>
+        <div class="picture">
+            <img src="/images/facepainting-picture.png">
+            <div class="pic">
+            <p>"The face painting event gave me a chance to showcase my creative side."</p><br>
+            <p class="p2">-Ananya T, CSE Dept.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-out">
+        <div class="call">
+            <h2>Become an organizer</h2>
+            <p>Book your first event NOW !!</p>
+            <button class="call-out-btn" onclick="window.location.href='/register?role=organizer'">Click here to register</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TickItIn. All rights reserved.</p>
+    </footer>
+</body>
+</html>

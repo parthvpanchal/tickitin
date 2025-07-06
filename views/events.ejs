@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>events- Tick_it_in</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Browse Events</h1>
+        <nav>
+            <a href="/">Home</a>
+            <% if(!user) { %>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                <a href="/my-bookings">My Bookings</a>
+            <% } else { %>
+                
+                <a href="/my-bookings">My Bookings</a>
+                <% if (user && user.role === 'organizer') { %>
+                    <a href="/organizer">Organizer Dashboard</a>
+                <% } %>
+                <a href="/logout">Logout</a>
+            <% } %>
+        </nav>
+    </header>
+    
+
+    <% if (events.length === 0) { %>
+        <p>No upcoming events yet.</p>
+    <% } else { %>
+        <div class="event-list">
+            <% events.forEach(event => { %>
+                <div class="event-card">
+                    <h3><%= event.title %></h3>
+                    <p><%= event.description %></p>
+                    <p>📍<%= event.location %></p>
+                    <p>📅<%= event.date.toLocaleString() %></p>
+                    <p>🪑Available seats: <%= event.seats %></p> 
+
+                    <form action="/book/<%= event.id %>" method="POST">
+                        <button type="submit">Book now</button>
+                    </form>
+                </div>  
+            <% }) %>
+        </div>
+    <% } %>
+</body>
+</html>

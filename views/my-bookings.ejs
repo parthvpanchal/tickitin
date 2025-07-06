@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>my-bookings- tick_it_in</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>My booked events</h1>
+        </nav>
+    </header>
+    
+    
+
+    <% if (bookings.length === 0) { %>
+        <p>You haven't booked any event yet.</p>
+
+    <% } else { %>
+        <ul class="booking-list">
+            <% bookings.forEach(booking => { %>
+                <li class="booking-card">
+                    <h3><%= booking.title %></h3>
+                    <p><%= booking.description %></p>
+                    <p><%= booking.location %></p>
+                    <p><%= booking.date.toLocaleString() %></p>
+                    <p><%= booking.booked_at.toLocaleString() %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</body>
+</html>
